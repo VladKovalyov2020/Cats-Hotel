@@ -1,0 +1,59 @@
+
+
+$browser-context: 16; // Default
+
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+
+
+
+//declare variables below
+
+$white: #ffffff;
+$black: #000000;
+$blue: #2e97c2 ;
+$green: #49ab53 ;
+
+$heading_color: $black;
+$text_color: #6d6d6d;
+$footer_text_color: #171615;
+// $text_color_2: #9f9f9f;
+
+// $dark-red: #8d0428;
+// $red: #ce0538;
+// $pink: #e4697a;
+// $gray: #7c7c7c;
+// $light-gray: #d8d8d8;
+
+$main_color: $blue;
+$sub_color: $black;
+// $sub_color:
+
+$font: 'Roboto', sans-serif;
+$font_g: 'Gotham', sans-serif;
+
+
+// $sub_font:
+
+
+
+// Roboto
+// 100 
+// 300 
+// 400 
+// 500
+// 700
+// 900
+
+
+
+
+
+
+

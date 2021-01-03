@@ -1,0 +1,200 @@
+.history-section {
+    .row {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1600px;
+        flex-wrap: wrap;
+        @include media-min(1200px) { 
+            max-width: em(1600);
+        }
+        @include media-max(991px) { 
+            &.chart-row {
+                flex-direction: column;    
+            }
+        }
+    }
+    
+    &-title {
+        text-transform: uppercase;
+        line-height: 1;
+        span {
+            font-size: 55px;
+            color: $main_color;
+            line-height: 0.3;
+            @include media-min(768px) { 
+                font-size: 100px;
+            }
+            @include media-min(1200px) { 
+                font-size: rem(160);
+            }
+        }
+        @include media-min(1200px) { 
+            max-width: (600/90)*1em;
+        }
+    }
+    &-text {
+        p,a {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.33;
+            @include media-min(768px) { 
+                line-height: 1.43;
+                font-size: 23px;
+            }
+            @include media-min(1200px) { 
+                line-height: 1.53;
+                font-size: rem(28);
+            }
+        }
+        a {
+            color: $main_color;
+            &:hover {
+                color: $sub_color;
+            }
+        }
+    }
+}
+.history-section-description {
+    margin-bottom: 74px;
+    @include media-min(1200px) { 
+        margin-bottom: em(90);
+    }
+    .column {
+        width: 100%;
+        @include media-min(768px) { 
+            width: 50%;
+        }
+    }
+}
+
+.history-date {
+    font-size: 40px;
+    font-family: $font_b;
+    font-weight: 600;
+    color: $sub_color;
+    display: block;
+    line-height: 1.3;
+    @include media-min(768px) { 
+        font-size: 45px;
+    }
+    @include media-min(1200px) { 
+        font-size: rem(50);
+    }
+}
+.history-description{
+    display: block;
+    font-weight: 500;
+    line-height: 1.6;
+    font-size: 14px;
+    @include media-min(768px) { 
+        font-size: 16px;
+    }
+    @include media-min(1200px) { 
+        font-size: rem(18);
+    }
+}
+.marker {
+    position: relative;
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    border: 4px solid $main_color;
+    background-color: $white;
+    border-radius: 50%;
+    transition: background-color .3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        background-color: $main_color;
+    }
+    @include media-min(768px) { 
+        width: 42px;
+        height: 42px;
+        border-width: 7px;
+    }
+    @include media-min(992px) { 
+        display: block;
+    }
+}
+
+
+//Desktop history from 992
+.desktop-chart {
+    display: none;
+    @include media-min(992px) { 
+        display: block;
+    }
+    .history-item {
+        position: relative;
+        text-align: center;
+        .marker {
+            margin: 32px auto;
+        }
+        &:nth-child(2) {
+            text-align: left;
+            .marker {
+                margin: 32px auto 32px 0;
+            }
+        }
+        &:last-child {
+            text-align: right;
+            .marker {
+                margin: 32px 0 32px auto;
+            }
+        }
+    }
+    .history-description{ 
+        max-width: 200px;
+        @include media-min(1200px) { 
+            max-width: (300/18)*1em;
+        }    
+    }
+    .history-image {
+        &--near {
+            position: absolute;
+            bottom: 0;
+        }
+        &--left {
+            left: 0;
+            transform: translateX(-50%);
+        }
+        &--right {
+            right: 0;
+            transform: translateX(50%);
+        }
+        display: inline-block;
+        @include media-min(1200px) { 
+            margin-bottom: em(9);
+        }
+    }
+    #canvas {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+//Mobile history till 991
+.mobile-chart {
+    @include media-min(992px) { 
+        display: none;
+    }
+    .history-item { 
+        display: flex;
+        margin-bottom: 59px;
+    }
+    .history-item__content {
+        width: calc(100% - 124px);
+    }
+    .history-image {
+        width: 60px;
+        img {
+            max-width: 60px;
+        }
+    }
+    .marker {
+        margin: 10px 12px 0 17px;
+    }
+}

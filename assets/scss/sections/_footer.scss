@@ -1,0 +1,262 @@
+
+//575/576  767/768    991/992    1199/1200
+.footer {
+	padding: 45px 0 32px;
+	background-color: #f8f8f8;
+	border-top: 2px solid $main_color;
+	@include media-min(768px) { 
+		padding: em(95) 0 em(92);
+	}
+	span, p, a {
+		font-weight: 300;
+	}
+	a {
+		color: $footer_text_color;
+		font-size: 13px;
+		letter-spacing: 0.97px;
+		opacity: 0.5;
+		@include media-min(768px) { 
+			font-size: rem(19);
+			letter-spacing: rem(1.42);
+		}
+		&:hover {
+			opacity: 1;
+			color: $sub_color;
+		}
+	}
+	ul{
+		margin-left: 0;
+		list-style: none;
+		padding: 0;
+	}
+	[class*="--desktop"] {
+		@include media-max(767px) {
+			display: none;
+		}
+	}
+	[class*="--mobile"] {
+		@include media-min(768px) { 
+			display: none;
+		}
+	}
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	
+	&__main-row {
+		justify-content: space-between;
+		flex-direction: column;
+		@include media-min(768px) { 
+			flex-direction: row;
+		}
+	}
+	&__nav-contact-row {
+		justify-content: flex-start;
+		@include media-max(767px) {
+			margin: 34px -7px 0;
+		}
+		@include media-min(768px) {
+			margin-top: em(108);
+		}
+		.column:first-child {
+			@include media-min(768px) {
+				padding-right: em(40);
+			}
+			@include media-min(1200px) {
+				padding-right: em(190);
+			}
+		}
+	}
+	.column {
+		@include media-max(767px) {
+			flex: 0 1 50%;
+			.column {
+				padding: 0 7px;
+				margin-bottom: 65px;
+			}
+			.footer__info-column {
+				flex: 0 1 100%;
+			}
+		}
+	}
+	.column-left {
+		flex: 0 1 100%;
+		display: flex;
+		flex-direction: column;
+		@include media-min(768px) {
+			flex: 0 1 33.333%;
+		}
+	}
+	.column-right {
+		flex: 0 1 66.666%
+	}
+	.column-long {
+		flex: 0 1 50%;
+		@include media-min(768px) {
+			margin-top: em(45);
+			margin-bottom: em(21);
+			flex: 0 1 100%;
+		}
+	}
+	&__info-column{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+	&-logo {
+		margin-bottom: 	25px;
+		@include media-min(768px) {
+			margin-bottom: em(51);
+		}
+		@include media-max(576px) {
+			max-width: 150px;
+		}
+		a {
+			display: inline-block;
+		}
+	}
+	&-text {
+		font-size: 19px;
+		font-weight: 300;
+		line-height: 1.42;
+		color: $footer_text_color;
+		@include media-min(768px) {
+			font-size: rem(25);
+			line-height: 1.6;
+		}
+	}
+	&-title {
+		display: inline-block;
+		font-size: 13px;
+		letter-spacing: 2.56px;
+		text-transform: uppercase;
+		font-family: $font_g;
+		color: $footer_text_color;
+		margin-bottom: 15px;
+		@include media-min(768px) {
+			margin-bottom: em(33);
+			font-size: rem(20);
+			letter-spacing: rem(3.93);
+		}
+	}
+	&-contact {
+		margin-bottom: 0;
+		@include media-min(768px) {
+			margin-bottom: em(10);
+		}
+		a{
+			color: $main_color;
+			box-shadow: none ;
+			font-weight: 400;
+			opacity: 1;
+			@include media-min(768px) {
+				box-shadow: inset 0 -1px 0 $main_color ;
+				&:hover {
+					box-shadow: none ;
+				}
+			}
+		}
+	}
+	&-info {
+		opacity: 0.5;
+		@include media-min(768px) {
+			opacity: 0.5
+		}
+	}
+	&-social-icons {
+		max-width: em(200);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 0 32px;
+		@include media-min(768px) {
+			margin: auto 0 0;
+		}
+		li {
+			width: 21px;
+			padding-bottom: 0;
+			margin-bottom: 0;
+			@include media-min(768px) {
+				width: auto;
+				& + li {
+					padding-left: em(10);
+				}
+			}
+		}
+		a {
+			display: inline-block;
+		}
+		svg {
+			width: 100%;
+		}
+	}
+	&-address {
+		line-height: 1.75;
+		@include media-max(767px) {
+			margin-top: 35px;
+			display: inline-block;
+			margin-bottom: 34px;
+			font-size: 13px;
+			font-weight: 300;
+			letter-spacing: 0.97px;
+			line-height: 23px;
+		}
+	}
+	.footer-menu {
+		margin: 0;
+		li {
+			@include media-max(767px) {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.footer-menu-2 {
+		margin: 0;
+		li {
+			margin: 0;
+			@include media-min(768px) {
+				padding-right: 10px;
+				display: inline-block;
+			}
+			@include media-min(992px) {
+				padding-right: 15px;
+			}
+			@include media-min(1200px) {
+				padding-right: em(22);
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+		a {
+			@include media-min(768px) {
+				font-size: 14px;
+				letter-spacing: rem(1.19);
+			}
+			@include media-min(992px) { 
+				font-size: rem(16);
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 1199px) {
+
+}
+@media only screen and (min-width: 768px) {
+	
+}
+@media only screen and (max-width: 767px) {
+
+	
+}
+@media only screen and (max-width: 576px) {
+
+}
+@media only screen and (min-width: 1200px) {
+	
+
+}
