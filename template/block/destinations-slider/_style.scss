@@ -1,0 +1,164 @@
+.destinations-slider-section {
+    
+}
+.destination-slider {
+    margin: 0 -4px;
+    @media only screen and (min-width: 768px) {
+        padding: 0 50px;
+    }
+    @media only screen and (min-width: 992px) {
+        margin: 0 -10px;
+    }
+    &-arrows {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: calc(50% - 20px);
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background-color: $white;
+        z-index: 1;
+        &--prev {
+            left: -15px;
+        }
+        &--next {
+            right: -15px;
+        }
+        svg {
+            max-width: 13px;
+        }
+        path {
+            transition: fill .3s ease-in-out;
+        }
+        &:hover {
+            background-color: $main_color;
+            path {
+                fill: $white;
+            }
+        }
+        @media only screen and (min-width: 768px) {
+            top: 50%;
+            width: 100px;
+            height: 100px;
+            &--prev {
+                left: 10px;
+            }
+            &--next {
+                right: 10px;
+            }
+            svg {
+                max-width: none;
+            }
+        }
+    }
+    .slick-dots {
+        text-align: center;
+        @include lu;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 19px;
+        li {
+        }
+        button {
+            padding: 0;
+            font-size: 0;
+            line-height: 0;
+            min-width: auto;
+            width: 15px;
+            height: 15px;
+            border: 1px solid $sub_color;
+            border-radius: 50%;
+            background-color: transparent;
+            margin: 0 3px;
+            outline: none;
+        }
+        .slick-active {
+            button {
+                background-color: $sub_color;
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+    
+}
+.destination-slide {
+    overflow: hidden;
+    min-height: 210px;
+    margin: 0 4px;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($sub_color, .4);
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+        z-index: 2;
+    }
+    &:hover {
+        &:before {
+            opacity: 1;
+            visibility: visible; 
+        }
+        .destination-slide__title-container {
+            transform: translateY(0);
+        }
+    }
+    &__title-container {
+        position: absolute;
+        z-index: 1;
+        left: 16px;
+        bottom: 17px;
+        transform: translateY(200%);
+        transition: transform .3s ease-in-out;
+        z-index: 3;
+        padding-right: 15px;
+        @media only screen and (min-width: 1200px) {
+            left: em(40);
+            bottom: em(40);
+        }
+    }
+    &-title {
+        position: relative;
+        font-family: $font;
+        margin: 0;
+        padding-bottom: 10px;
+        color: $white;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1.29px;
+        text-transform: uppercase;
+        line-height: 1.3;
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 26px;
+            height: 1px;
+            background-color: #187daf;
+        }
+        @media only screen and (min-width: 1200px) {
+            font-size: rem(26);
+            letter-spacing: 2.4px;
+        }
+    }
+    @media only screen and (min-width: 768px) {
+        min-height: 350px;
+    }
+    @media only screen and (min-width: 992px) {
+        margin: 0 10px;
+        min-height: 450px;
+    }
+    @media only screen and (min-width: 1200px) {
+        min-height: em(547);
+    }
+}

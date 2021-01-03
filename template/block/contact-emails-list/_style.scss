@@ -1,0 +1,77 @@
+.emails-list-section {
+    &__row {
+        width: 100%;
+        max-width: 1600px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include media-min(768px) { 
+            justify-content: center;
+        }
+        @include media-min(1200px) { 
+            justify-content: space-between;
+            max-width: em(1600);
+        } 
+    }
+    &__column {
+        width: 100%;
+        margin-bottom: 15px;
+        @include media-min(768px) { 
+            width: auto;
+        }
+        @include media-min(1200px) { 
+            margin-bottom: em(15);
+            padding: 0 em(5);
+        }
+    }
+    .email-type {
+        display: block;
+        font-family: $font_b;
+        font-weight: 600;
+        color: $sub_color;
+        font-size: 35px;
+        line-height: 1;
+        margin-bottom: 10px;
+        @include media-min(768px) { 
+            line-height: 1.75;
+            font-size: 42px;
+            margin-bottom: 0;
+        }
+        @include media-min(1200px) { 
+            font-size: rem(50);
+        }
+    }
+    .email {
+        display: flex;
+        align-items: center;
+        a {
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 15px;
+            color: $sub_color;
+            &:hover, &:focus {
+                color: $main_color;
+            }
+            @include media-max(330px) { 
+                font-size: 14px;
+                margin-left: 10px;
+            }
+            @include media-min(768px) { 
+                font-size: 20px;
+                margin-left: 20px;
+            }
+            @include media-min(768px) { 
+                font-size: 20px;
+                margin-left: (20/20)*1em;
+            }
+        }
+        svg {
+            width: 21px;
+            min-width: 21px;
+            @include media-min(768px) { 
+                width: em(29);
+                min-width: em(21);
+            }
+        }
+    }
+}

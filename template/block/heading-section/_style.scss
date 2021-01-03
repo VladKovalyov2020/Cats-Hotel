@@ -1,0 +1,43 @@
+.heading-section {
+	.heading-section-row {
+		margin: 0 auto 0 ;
+		&.full-row {
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		&.large-row  {
+			max-width: 1640px ;
+			@include media-min(1200px) {
+				max-width: em(1640) ;
+			}
+		}
+		&.row {
+			max-width: 1170px ;
+			@include media-min(1200px) {
+				max-width: em(1170) ;
+			}
+		}
+		&.smaller-row {
+			max-width: 1025px;
+			@include media-min(1200px) {
+				max-width: em(1025) ;
+			}
+		}
+	}
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+@media only screen and (max-width: 767px) {
+	
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+	
+}

@@ -1,0 +1,217 @@
+.tour-info {
+	.row {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.column {
+		width: 100%;
+		@include media-min(992px) {
+			width: 50%;
+		}
+	}
+	ul {
+		@include lu;
+	}
+	@include media-min(992px) {
+		.tour-info__content-column {
+			width: 54%;
+		}	
+		.tour-info__slider-column {
+			width: 46%;
+		}	
+	}
+	&__row {
+		max-width: 1600px;
+		@include media-min(1200px) {
+			max-width: em(1600);
+		}
+	}
+	&__categories {
+		padding: 0 0 30px;
+		@include media-min(1200px) {
+			padding: 14px 0 10px;
+		}
+		span, svg {
+			vertical-align: middle;
+		}
+		span {
+			font-size: 18px;
+			font-weight: 400;
+			@include media-min(1200px) {
+				font-size: rem(20);
+			}	
+		}
+		.tour-info-category-label {
+			font-weight: 700;
+			padding-right: 15px;
+			@include media-min(1200px) {
+				padding-right: 1em;
+			}
+		}
+		.tour-info-category {
+			padding-left: 8px;
+			margin-right: 55px;
+			@include media-min(1200px) {
+				padding-left: 0.5em;
+				margin-right: (61/20)*1em;
+			}
+		}
+	}
+	&__category-item {
+		display: inline-block;
+		margin-bottom: (13/20)*1em;
+	}
+	&-visited-cities {
+		line-height: 1.2;
+		margin-bottom: (14/60)*1em;
+	}
+	.list-col {
+		width: 100%;
+		@include media-min(768px) {
+			width: 50%;
+		}
+	}
+	&-plan {
+		margin-top: em(38);
+		&-list {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin-bottom: 66px;
+			@include media-min(1200px) {
+				margin-bottom: em(66);
+				max-width: em(725);
+			}
+			&__item {
+				margin-bottom: 15px;
+				@include media-min(768px) {
+					max-width: 315px;
+				}
+				@include media-min(1200px) {
+					max-width: em(300);
+					margin-bottom: em(15);
+				}
+			}
+		}
+		&-title {
+			line-height: 1;
+			font-size: 30px;
+			margin-bottom: 0;
+			@include media-min(1200px) {
+				line-height: 2.2;
+				font-size: rem(35);
+			}
+		}
+		&-item-title {
+			font-weight: 700;
+			line-height: 2;
+			display: block;
+			font-size: 15px;
+			@include media-min(1200px) {
+				font-size: rem(18);
+			}
+		}
+		&-item-description {
+			display: inline-block;
+			font-size: 15px;
+			line-height: 1.2;
+			@include media-min(1200px) {
+				font-size: rem(15);
+			}
+		}
+	}
+	
+	&-additional-info {
+		&__title {
+			color: $sub_color;
+			font-size: 20px;
+			font-weight: 700;
+			line-height: 1;
+			margin-bottom: 20px;
+			@include media-min(1200px) {
+				margin-bottom: (36/25)*1em;
+				font-size: rem(25);
+			}
+		}
+		&__description {
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 1.5;
+			margin-bottom: 50px;
+			@include media-min(1200px) { 
+				font-size: rem(18);
+				line-height: 1.6;
+				margin-bottom: (50/18)*1em;
+			}
+		}
+	}
+	&-slide {
+		min-height: 212px;
+		@include media-min(768px) { 
+			min-height: 300px;
+		}
+		@include media-min(992px) { 
+			min-height: 385px;
+		}
+		@include media-min(1200px) { 
+			min-height: em(470);
+		}
+	}
+	@include media-max(575px) { 
+		&-slider-nav-container {
+			margin: 0 -6px;
+		}	
+	}
+	&-slider-nav {
+		padding: 9px 0;
+		@include media-min(576px) { 
+			position: relative;
+			padding: 17px 31px;
+		}
+		@include media-min(1200px) { 
+			padding: em(17) em(31);
+		}
+		&-arrows {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			@include media-max(575px) { 
+				display: none;
+			}
+			path {
+				fill: $sub_color;
+				transition: fill .3s ease-in-out;
+				&:hover {
+					fill: $main_color;
+				}
+			}
+		}
+		&-prev-arr {
+			left: 0;
+		}
+		&-next-arr {
+			right: 0;
+		}
+	}
+	&-slide-nav {
+		min-height: 71px;
+		opacity: 0.16;
+		outline: none;
+		box-shadow: none;
+		transition: all .3s ease-in-out;
+		margin: 0 6px;
+		cursor: pointer;
+		@include media-min(576px) { 
+			margin: 0 8px;
+			min-height: 80px;
+		}
+		@include media-min(1200px) { 
+			min-height: em(87);
+		}
+		&.slick-current, &:hover {
+			opacity: 1;
+			box-shadow: inset 0 0 0 1px #979797;
+		}
+	}
+}

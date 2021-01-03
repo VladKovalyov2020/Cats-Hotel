@@ -1,0 +1,233 @@
+.statistic-section {
+	&__blockquote {
+		position: relative;
+		text-align: center;
+		font-size: 30px;
+		font-family: $font_b;
+		font-weight: 400;
+		color: $sub_color;
+		line-height: 1.38;
+		margin: 0 0 80px;
+		cite {
+			display: block;
+			font-size: 15px;
+			letter-spacing: 0.9px;
+			text-transform: uppercase;
+			font-weight: 500;
+			color: $main_color;
+			font-style: normal;
+			font-family: $font;
+			@media only screen and (min-width: 768px) {
+				font-size: rem(25);
+				letter-spacing: rem(1.25);
+			}
+		}
+		@media only screen and (min-width: 768px) {
+			font-size: rem(80);
+		}
+		@media only screen and (min-width: 768px) {
+			margin-bottom: (89/80)*1em;
+		}
+		svg {
+			margin: 0 auto;
+			display: block;
+			max-width: 41px;
+			@media only screen and (min-width: 768px) {
+				max-width: none;
+			}
+		}
+	}
+	&__row {
+		position: relative;
+		.bg-image-small {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+		@media only screen and (max-width: 767px) {
+			background-image: none !important;
+    	}
+		@media only screen and (min-width: 768px) {
+			.bg-image-small {
+				display: none;
+			}
+    	}
+	}
+	&__content {
+		padding: 29px 0 12px;
+		@media only screen and (min-width: 1200px) {
+			padding: em(183) 0 em(187);
+		}
+	}
+	&__inner-row {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		max-width: 300px;
+		margin: 0 auto;
+		@media only screen and (min-width: 768px) {
+			max-width: em(1600);
+		}
+		@media only screen and (min-width: 992px) {
+			justify-content: space-between;
+		}
+	}
+	&__text-column {
+		width: 100%;
+		text-align: center;
+		@media only screen and (min-width: 992px) {
+			text-align: left;
+			width: 42%;
+		}
+		h2,p {
+			color: $white;
+		}
+		h2 {
+			font-weight: 400;
+			margin-bottom: 14px;
+			@media only screen and (min-width: 768px) {
+				margin-bottom: 20px;
+			}
+			@media only screen and (min-width: 1200px) {
+				margin-bottom: (15/90)*1em;
+			}
+		}
+		p {
+			max-width: (600/15)*1em;
+			font-size: rem(15);
+			line-height: 1.93;
+			display: none;
+			@media only screen and (min-width: 992px) {
+				display: block;
+			}
+		}
+	}
+	&__play-button-column {
+		text-align: center;
+		@media only screen and (min-width: 768px) {
+			width: 20%;
+		}
+		@media only screen and (min-width: 1200px) {
+			width: 12%;
+		}
+	}
+	&-play-button {
+		display: inline-block;
+		margin-bottom: 15px;
+		@media only screen and (min-width: 768px) {
+			margin-bottom: 19px;
+		}
+		@media only screen and (min-width: 992px) {
+			margin-bottom: 0;
+		}
+		svg {
+			max-width: 76px;
+			height: auto;
+			@media only screen and (min-width: 768px) {
+				max-width: none;
+			}
+		}
+		.layer {
+			fill-opacity: 0.42;
+			transition: fill-opacity .3s ease-in-out;
+		}
+		&:hover {
+			.layer {
+				fill-opacity: 1;
+			}
+		}
+	}
+	&-pause-button {
+		cursor: pointer;
+		font-size: 22px;
+		font-weight: bold;
+		color: white;
+		position: absolute;
+		letter-spacing: 2px;
+		z-index: 1;
+		padding: 10px;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		&.show {
+			opacity: 1;
+			visibility: visible;
+		}
+		@media only screen and (min-width: 1200px) {
+			font-size: rem(22);
+			letter-spacing: rem(2);
+			padding: (10/22)*1em;
+		}
+	}
+	&__statistic-data-column {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		@media only screen and (min-width: 768px) {
+			justify-content: center;
+		}
+		@media only screen and (min-width: 992px) {
+			justify-content: space-between;
+			width: 31%;
+		}
+		span {
+			text-align: center;
+			display: block;
+			color: $white;
+		}
+	}
+	&-statistic-data__item {
+		padding: 0 5px;
+		@media only screen and (min-width: 768px) {
+			padding: 0 em(15);
+		}
+	}
+	&__video-container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	&-video {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		min-width: 100%;
+		min-height: 100%;
+		z-index: 1;
+		visibility: hidden;
+		opacity: 0;
+		transition: all .3s ease-in-out;
+		&.open {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+.statistic-label {
+	font-size: 8px;
+	font-weight: 500;
+	text-transform: uppercase;
+	line-height: 2;
+	@media only screen and (min-width: 1200px) {
+		font-size: rem(16);
+	}
+}
+.statistic-value {
+	font-family: $font_b;
+	font-weight: 400;
+	font-size: 33px;
+	line-height: 1.25;
+	@media only screen and (min-width: 1200px) {
+		font-size: rem(65);
+	}
+}

@@ -1,0 +1,64 @@
+.wpml-ls-legacy-dropdown {
+	width: auto;
+	a {
+		padding-left: 0;
+		background-color: transparent;
+		border: none;
+		&:hover, &:focus {
+			background-color: transparent;  
+		}
+		&.wpml-ls-item-toggle {
+			padding-left: 0;
+			padding-right: 38px;
+			@include media-min(1200px) {
+				padding-right: em(54);
+			}
+			&:after {
+				right: 19px;
+				height: 5px;
+				width: 5px; 
+				transform: rotate(-45deg);
+				border: solid $white;
+				border-width: 0 0 2px 2px;
+				.error404 & {
+					border: solid $sub_color;
+					border-width: 0 0 2px 2px;
+				}
+				@include media-min(1200px) {
+					right: em(34);
+				}
+			}
+		}
+	}
+	.wpml-ls-current-language{
+		&:hover, &:focus{
+			>a {
+				background-color: transparent;   
+			}
+		}
+	}    
+	.wpml-ls-flag {
+		height: auto;
+		min-width: 26px;
+		@include media-min(1200px) {
+			min-width: em(26);
+		}
+	}
+	.wpml-ls-sub-menu{
+		border-top: none;
+		li {
+			font-size: inherit ;
+		}
+	}
+}
+.header.active {
+	.wpml-ls-legacy-dropdown {
+		a {
+			&.wpml-ls-item-toggle {
+				&:after {
+					border-color: $black;
+				}
+			}
+		}
+	}        
+}
